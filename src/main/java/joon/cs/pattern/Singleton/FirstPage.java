@@ -6,9 +6,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class FirstPage {
+
+	//	private Settings settings = new Settings();
+
 	private Settings settings = Settings.getSettings();
 
-	
 	public FirstPage() {
 		System.out.println("FirstPage_객체생성");
 	}
@@ -17,7 +19,7 @@ public class FirstPage {
 	public ModelAndView setAndPrintSettings() {
 		ModelAndView mav = new ModelAndView();
 		settings.setDarkMode(true);
-		settings.setFontSize(15);
+		settings.setFontSize(20);
 		System.out.println(settings.getDarkMode() + " " + settings.getFontSize());
 		mav.setViewName("Singleton");
 		return mav;
